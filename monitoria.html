@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+
+// AND
+let A = true;
+let B = false;
+
+console.log(A && B); // false
+console.log(A && A); // true
+console.log(B && B); // false
+
+let edad = 20;
+let pais = "México";
+
+if (edad >= 18 && pais === "México") {
+  console.log("El usuario es mayor de edad y vive en México.");
+} else {
+  console.log("El usuario no cumple con los requisitos.");
+}
+
+
+// OR
+const p = true;
+const q = false;
+
+const resultadoOR = p || q; // true
+
+let edadNueva = 17;
+let paisNuevo = "España";
+
+if (edadNueva >= 18 || paisNuevo === "México") {
+  console.log("El usuario es mayor de edad o vive en México.");
+} else {
+  console.log("El usuario no cumple con los requisitos.");
+}
+
+// NOT
+let a = true;
+let b = false;
+
+console.log(!a); // false
+console.log(!b); // true
+
+let paisNOT = "España";
+
+if (!(pais === "México")) {
+  console.log("El usuario no vive en México.");
+} else {
+  console.log("El usuario vive en México.");
+}
+
+
+// CICLICAS JAVASCRIPT
+class ListaDeCompras {
+  constructor() {
+    this.items = ['Leche', 'Pan', 'Huevos', 'Cereal'];
+  }
+
+  buscar(item) {
+    for (let i = 0; i < this.items.length; i++) {
+      if (this.items[i] === item) {
+        console.log(`${item} se encuentra en la lista.`);
+        break;
+      } else if (i === this.items.length - 1) {
+        console.log(`${item} no se encuentra en la lista.`);
+      }
+    }
+  }
+}
+
+let lista = new ListaDeCompras();
+lista.buscar('Leche'); // Leche se encuentra en la lista.
+lista.buscar('Papas'); // Papas no se encuentra en la lista.
+
+
+// CICLICA PHP
+class Estudiante {
+  private $nombre;
+  private $notas;
+
+  public function __construct($nombre, $notas) {
+    $this->nombre = $nombre;
+    $this->notas = $notas;
+  }
+
+  public function estaAprobado() {
+    for ($i = 0; $i < count($this->notas); $i++) {
+      if ($this->notas[$i] < 60) {
+        echo "$this->nombre no aprobó todas las asignaturas.\n";
+        break;
+      } else if ($i === count($this->notas) - 1) {
+        echo "$this->nombre aprobó todas las asignaturas.\n";
+      }
+    }
+  }
+}
+
+$estudiante1 = new Estudiante('Juan', [80, 70, 85]);
+$estudiante2 = new Estudiante('Maria', [60, 70, 55]);
+
+$estudiante1->estaAprobado(); // Juan aprobó todas las asignaturas.
+$estudiante2->estaAprobado(); // Maria no aprobó todas las asignaturas.
+
+
+</script>
+</html>
+
